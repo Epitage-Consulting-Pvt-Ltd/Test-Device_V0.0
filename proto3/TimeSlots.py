@@ -1,6 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QLabel, QMainWindow ,QPushButton , QLineEdit
 from PyQt5.QtGui import QPixmap, QFont
+from PyQt5.QtCore import Qt, QTimer, QDateTime
 from datetime import datetime
 from utilities.components import *
 
@@ -17,16 +18,32 @@ class time_slots(QMainWindow):
         self.background_image.setPixmap(QPixmap("images/background.png"))
         self.background_image.setGeometry(0, 0, self.width, self.height)
 
-        self.newSlot = create_img_button(self, "images/icons/TimeSlotsIcon.png", 100, 100, (18, 99), self.close, "New Slots", "#D9D9D9")
-        self.newSlot.setEnabled(False)
+        newSlot = imgbutton2(self, "images/icons/TimeSlot100x100.png", 100, 100, [18, 99], self.close)
 
-        self.editSlot = create_img_button(self, "images/icons/TimeSlotsIcon.png", 100, 100, (133, 99), self.close, "Edit Slots", "#D9D9D9")
-        self.editSlot.setEnabled(False)
+        editSlot = imgbutton2(self, "images/icons/TimeSlot100x100.png", 100, 100, [133, 99], self.close)
 
-        self.slots = create_img_button(self, "images/icons/TimeSlotsIcon.png", 50, 50, (215, 34), self.close,
-                                             "Slots", "#D9D9D9")
-        self.slots.setEnabled(False)
+        slots = imgbutton2(self, "images/icons/TimeSlot50x50.png", 50, 50, [215, 34], self.close)
 
+        # Create label for date and time
+        self.date_time_label = QLabel(self)
+        self.date_time_label.setGeometry(5, 4, 190, 20)
+
+        # Set font for date and time label
+        font_small = QFont("inika", 10, QFont.Normal)
+        self.date_time_label.setFont(font_small)
+
+        # Create label for time
+        self.time_label = QLabel(self)
+        self.time_label.setGeometry(195, 547, 300, 30)
+        self.time_label.setFont(font_small)
+
+        # Update date and time every second
+        self.timer = QTimer()
+        self.timer.timeout.connect(self.update_date_time)
+        self.timer.start(1000)
+
+        # Initial date and time display
+        self.update_date_time()
 
     def update_date_time(self):
         # Get current date and time
@@ -47,8 +64,6 @@ class time_slots(QMainWindow):
         # Update date and time labels
         current_datetime_str = f"{formatted_date} - {formatted_time}"
         self.date_time_label.setText(current_datetime_str)
-
-        self.backbtn = imgbutton(self, "images/icons/BackIcon.png", 30, 30, (5, 44))
 
 
 if __name__ == "__main__":

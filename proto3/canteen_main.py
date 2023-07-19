@@ -1,6 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QLabel, QMainWindow ,QPushButton , QLineEdit
 from PyQt5.QtGui import QPixmap, QFont
+from PyQt5.QtCore import Qt, QTimer, QDateTime
 from datetime import datetime
 from utilities.components import *
 
@@ -17,8 +18,30 @@ class canteen_main(QMainWindow):
         self.background_image.setPixmap(QPixmap("images/background.png"))
         self.background_image.setGeometry(0, 0, self.width, self.height)
 
-        self.canteenMain = create_img_button(self, "images/icons/CanteenIcon.png", 100, 100, (18, 99), self.close, "Canteen", "#D9D9D9")
-        self.canteenMain.setEnabled(False)
+        canteen = imgbutton2(self, "images/icons/CanteenIcon.png", 100, 100, [18, 99], self.close)
+
+        # Create label for date and time
+        self.date_time_label = QLabel(self)
+        self.date_time_label.setGeometry(5, 4, 190, 20)
+
+        # Set font for date and time label
+        font_small = QFont("inika", 10, QFont.Normal)
+        self.date_time_label.setFont(font_small)
+
+
+        # Create label for time
+        self.time_label = QLabel(self)
+        self.time_label.setGeometry(195, 547, 300, 30)
+        self.time_label.setFont(font_small)
+
+
+        # Update date and time every second
+        self.timer = QTimer()
+        self.timer.timeout.connect(self.update_date_time)
+        self.timer.start(1000)
+
+        # Initial date and time display
+        self.update_date_time()
 
     def update_date_time(self):
         # Get current date and time
@@ -39,9 +62,6 @@ class canteen_main(QMainWindow):
         # Update date and time labels
         current_datetime_str = f"{formatted_date} - {formatted_time}"
         self.date_time_label.setText(current_datetime_str)
-
-        self.backbtn = imgbutton(self, "images/icons/BackIcon.png", 30,30, (5, 44))
-        self.backbtn.setVisible(True)
 
 
 if __name__ == "__main__":
