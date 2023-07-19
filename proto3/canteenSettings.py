@@ -17,15 +17,15 @@ class canteen_setting(QMainWindow):
         self.background_image.setPixmap(QPixmap("images/background.png"))
         self.background_image.setGeometry(0, 0, self.width, self.height)
 
-        self.canteenMain = create_img_button(self, "images/icons/TimeSlotsIcon.png", 100, 100, (18, 99), self.close, "Time Slots", "#D9D9D9")
-        self.canteenMain.setEnabled(False)
+        self.timeslot = create_img_button(self, "images/icons/TimeSlotsIcon.png", 100, 100, (18, 99), self.close, "Time Slots", "#D9D9D9")
+        self.timeslot.setEnabled(False)
 
-        self.canteenMain = create_img_button(self, "images/icons/FoodMenuIcon.png", 100, 100, (133, 99), self.close, "Menu", "#D9D9D9")
-        self.canteenMain.setEnabled(False)
+        self.foodMenu = create_img_button(self, "images/icons/FoodMenuIcon.png", 100, 100, (133, 99), self.close, "Menu", "#D9D9D9")
+        self.foodMenu.setEnabled(False)
 
-        self.canteenMain = create_img_button(self, "images/icons/FoodMenuIcon.png", 50, 50, (215, 34), self.close,
-                                             "Menu", "#D9D9D9")
-        self.canteenMain.setEnabled(False)
+        self.canteenSetting = create_img_button(self, "images/icons/CanteenSettingIcon.png", 50, 50, (215, 34), self.close,
+                                             "Settings", "#D9D9D9")
+        self.canteenSetting.setEnabled(False)
 
 
     def update_date_time(self):
