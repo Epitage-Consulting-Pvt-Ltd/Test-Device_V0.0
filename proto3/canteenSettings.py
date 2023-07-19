@@ -5,7 +5,7 @@ from datetime import datetime
 from utilities.components import *
 
 
-class canteen_main(QMainWindow):
+class canteen_setting(QMainWindow):
     def __init__(self):
         super().__init__()
 
@@ -17,8 +17,16 @@ class canteen_main(QMainWindow):
         self.background_image.setPixmap(QPixmap("images/background.png"))
         self.background_image.setGeometry(0, 0, self.width, self.height)
 
-        self.canteenMain = create_img_button(self, "images/icons/CanteenIcon.png", 100, 100, (18, 99), self.close, "Canteen", "#D9D9D9")
+        self.canteenMain = create_img_button(self, "images/icons/TimeSlotsIcon.png", 100, 100, (18, 99), self.close, "Time Slots", "#D9D9D9")
         self.canteenMain.setEnabled(False)
+
+        self.canteenMain = create_img_button(self, "images/icons/FoodMenuIcon.png", 100, 100, (133, 99), self.close, "Menu", "#D9D9D9")
+        self.canteenMain.setEnabled(False)
+
+        self.canteenMain = create_img_button(self, "images/icons/FoodMenuIcon.png", 50, 50, (215, 34), self.close,
+                                             "Menu", "#D9D9D9")
+        self.canteenMain.setEnabled(False)
+
 
     def update_date_time(self):
         # Get current date and time
@@ -40,12 +48,11 @@ class canteen_main(QMainWindow):
         current_datetime_str = f"{formatted_date} - {formatted_time}"
         self.date_time_label.setText(current_datetime_str)
 
-        self.backbtn = imgbutton(self, "images/icons/BackIcon.png", 30,30, (5, 44))
-        self.backbtn.setVisible(True)
+        self.backbtn = imgbutton(self, "images/icons/BackIcon.png", 30, 30, (5, 44))
 
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    window = canteen_main()
+    window = canteen_setting()
     window.show()
     sys.exit(app.exec_())
