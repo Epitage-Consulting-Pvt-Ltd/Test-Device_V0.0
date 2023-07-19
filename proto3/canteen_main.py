@@ -5,7 +5,7 @@ from datetime import datetime
 from utilities.components import create_img_button , create_labeled_textbox , imgbutton
 
 
-class canteen_settings(QMainWindow):
+class canteen_main(QMainWindow):
     def __init__(self):
         super().__init__()
 
@@ -47,6 +47,6 @@ class canteen_settings(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    window = canteen_settings()
+    window = canteen_main()
     window.show()
     sys.exit(app.exec_())
