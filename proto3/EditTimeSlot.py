@@ -6,7 +6,7 @@ from datetime import datetime
 from utilities.components import *
 
 
-class time_slots(QMainWindow):
+class edit_time_slots(QMainWindow):
     def __init__(self):
         super().__init__()
 
@@ -18,7 +18,7 @@ class time_slots(QMainWindow):
         self.background_image.setPixmap(QPixmap("images/background.png"))
         self.background_image.setGeometry(0, 0, self.width, self.height)
 
-        new_slot = imgbutton2(self, "images/icons/NewSlotBooking.png", 50, 50, [215, 34], self.close)
+        edit_slot = imgbutton2(self, "images/icons/editTimeSlot.png", 50, 50, [215, 34], self.close)
 
         cancel_btn = imgbutton2(self, "images/icons/Cancel_btn.png", 85, 35, [147, 729], self.close)
 
@@ -157,6 +157,6 @@ class time_slots(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    window = time_slots()
+    window = edit_time_slots()
     window.show()
     sys.exit(app.exec_())
