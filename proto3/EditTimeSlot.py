@@ -6,7 +6,7 @@ from datetime import datetime
 from utilities.components import *
 
 
-class new_time_slots(QMainWindow):
+class time_slots(QMainWindow):
     def __init__(self):
         super().__init__()
 
@@ -157,6 +157,6 @@ class new_time_slots(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    window = new_time_slots()
+    window = time_slots()
     window.show()
     sys.exit(app.exec_())
