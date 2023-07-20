@@ -6,7 +6,7 @@ from datetime import datetime
 from utilities.components import *
 
 
-class newFoodMenu(QMainWindow):
+class editFoodSlot(QMainWindow):
     def __init__(self):
         super().__init__()
 
@@ -18,7 +18,7 @@ class newFoodMenu(QMainWindow):
         self.background_image.setPixmap(QPixmap("images/background.png"))
         self.background_image.setGeometry(0, 0, self.width, self.height)
 
-        newFoodMenu = imgbutton2(self, "images/icons/newFoodMenu50x50.png", 50, 50, [215, 34], self.close)
+        editFoodMenu = imgbutton2(self, "images/icons/editTimeSlot.png", 50, 50, [215, 34], self.close)
 
         cancel_btn = imgbutton2(self, "images/icons/Cancel_btn.png", 85, 35, [147, 729], self.close)
 
@@ -94,6 +94,6 @@ class newFoodMenu(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    window = newFoodMenu()
+    window = editFoodSlot()
     window.show()
     sys.exit(app.exec_())
