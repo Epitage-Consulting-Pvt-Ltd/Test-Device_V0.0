@@ -22,6 +22,8 @@ class canteen_setting(QMainWindow):
 
         foodMenu = imgbutton2(self, "images/icons/FoodMenu.png", 100, 100, [133, 99], self.close)
 
+        self.backbtnv2 = imgbutton2(self, "images/icons/BackIcon.png", 30, 30, (5, 44), self.close)
+
         self.canteenSetting = imgbutton2(self, "images/icons/CanteenSetting.png", 50, 50, [215, 34], self.close)
         self.canteenSetting.setEnabled(False)
 

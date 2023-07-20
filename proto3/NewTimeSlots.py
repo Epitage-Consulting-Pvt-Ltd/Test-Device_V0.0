@@ -20,6 +20,8 @@ class new_time_slots(QMainWindow):
 
         new_slot = imgbutton2(self, "images/icons/NewSlotBooking.png", 50, 50, [215, 34], self.close)
 
+        self.backbtnv2 = imgbutton2(self, "images/icons/BackIcon.png", 30, 30, (5, 44), self.close)
+
         cancel_btn = imgbutton2(self, "images/icons/Cancel_btn.png", 85, 35, [147, 729], self.close)
 
         ok_btn = imgbutton2(self, "images/icons/OK_btn.png", 85, 35, [248, 729], self.close)
@@ -52,7 +54,7 @@ class new_time_slots(QMainWindow):
 
         label = QLabel("To Time", self)
         label.setStyleSheet("color: #808080")
-        label.move(257, 177)
+        label.move(257, 176)
 
         self.toTime_field = QLineEdit(self)
         self.toTime_field.setFixedSize(130, 30)

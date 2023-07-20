@@ -21,6 +21,8 @@ class newFoodMenu(QMainWindow):
         self.newFoodMenu = imgbutton2(self, "images/icons/newFoodMenu50x50.png", 50, 50, [215, 34], self.close)
         self.newFoodMenu.setEnabled(False)
 
+        self.backbtnv2 = imgbutton2(self, "images/icons/BackIcon.png", 30, 30, (5, 44), self.close)
+
         cancel_btn = imgbutton2(self, "images/icons/Cancel_btn.png", 85, 35, [147, 729], self.close)
 
         ok_btn = imgbutton2(self, "images/icons/OK_btn.png", 85, 35, [248, 729], self.close)

@@ -22,6 +22,8 @@ class comm_man(QMainWindow):
 
         commsExt = imgbutton2(self, "images/icons/CommsExt100x100.png", 100, 100, [134, 141], self.close)
 
+        self.backbtnv2 = imgbutton2(self, "images/icons/BackIcon.png", 30, 30, (5, 44), self.close)
+
         self.commsMain = imgbutton2(self, "images/icons/Comms50x50.png", 50, 50, [215, 34], self.close)
         self.commsMain.setEnabled(False)
 

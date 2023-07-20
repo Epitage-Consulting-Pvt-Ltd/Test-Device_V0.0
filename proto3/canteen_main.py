@@ -20,6 +20,8 @@ class canteen_main(QMainWindow):
 
         canteen = imgbutton2(self, "images/icons/CanteenIcon.png", 100, 100, [18, 99], self.close)
 
+        self.backbtnv2 = imgbutton2(self, "images/icons/BackIcon.png", 30, 30, (5, 44), self.close)
+
         # Create label for date and time
         self.date_time_label = QLabel(self)
         self.date_time_label.setGeometry(5, 4, 190, 20)

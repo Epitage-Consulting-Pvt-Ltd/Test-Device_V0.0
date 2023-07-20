@@ -22,6 +22,8 @@ class time_slots(QMainWindow):
 
         editSlot = imgbutton2(self, "images/icons/EditSlot.png", 100, 100, [133, 99], self.close)
 
+        self.backbtnv2 = imgbutton2(self, "images/icons/BackIcon.png", 30, 30, (5, 44), self.close)
+
         self.slots = imgbutton2(self, "images/icons/TimeSlot50x50.png", 50, 50, [215, 34], self.close)
         self.slots.setEnabled(False)
 
