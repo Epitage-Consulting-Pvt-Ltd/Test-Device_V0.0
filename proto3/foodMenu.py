@@ -22,7 +22,8 @@ class food_menu(QMainWindow):
 
         editFoodMenu = imgbutton2(self, "images/icons/editFoodMenu100x100.png", 100, 100, [133, 99], self.close)
 
-        foodMenu50x50 = imgbutton2(self, "images/icons/foodMenuIcon50x50.png", 50, 50, [215, 34], self.close)
+        self.foodMenu50x50 = imgbutton2(self, "images/icons/foodMenuIcon50x50.png", 50, 50, [215, 34], self.close)
+        self.foodMenu50x50.setEnabled(False)
 
         # Create label for date and time
         self.date_time_label = QLabel(self)

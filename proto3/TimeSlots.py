@@ -22,7 +22,8 @@ class time_slots(QMainWindow):
 
         editSlot = imgbutton2(self, "images/icons/EditSlot.png", 100, 100, [133, 99], self.close)
 
-        slots = imgbutton2(self, "images/icons/TimeSlot50x50.png", 50, 50, [215, 34], self.close)
+        self.slots = imgbutton2(self, "images/icons/TimeSlot50x50.png", 50, 50, [215, 34], self.close)
+        self.slots.setEnabled(False)
 
         # Create label for date and time
         self.date_time_label = QLabel(self)

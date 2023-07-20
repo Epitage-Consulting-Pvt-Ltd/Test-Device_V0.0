@@ -18,7 +18,8 @@ class editFoodSlot(QMainWindow):
         self.background_image.setPixmap(QPixmap("images/background.png"))
         self.background_image.setGeometry(0, 0, self.width, self.height)
 
-        editFoodMenu = imgbutton2(self, "images/icons/editTimeSlot.png", 50, 50, [215, 34], self.close)
+        self.editFoodMenu = imgbutton2(self, "images/icons/editTimeSlot.png", 50, 50, [215, 34], self.close)
+        self.editFoodMenu.setEnabled(False)
 
         cancel_btn = imgbutton2(self, "images/icons/Cancel_btn.png", 85, 35, [147, 729], self.close)
 
