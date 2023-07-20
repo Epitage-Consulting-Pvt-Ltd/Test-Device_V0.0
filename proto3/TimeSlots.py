@@ -20,7 +20,7 @@ class time_slots(QMainWindow):
 
         newSlot = imgbutton2(self, "images/icons/TimeSlot100x100.png", 100, 100, [18, 99], self.close)
 
-        editSlot = imgbutton2(self, "images/icons/TimeSlot100x100.png", 100, 100, [133, 99], self.close)
+        editSlot = imgbutton2(self, "images/icons/EditSlot.png", 100, 100, [133, 99], self.close)
 
         slots = imgbutton2(self, "images/icons/TimeSlot50x50.png", 50, 50, [215, 34], self.close)
 
