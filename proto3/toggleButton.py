@@ -21,7 +21,7 @@ class togButton(QMainWindow):
         self.Crd_but = QPushButton(self)
         self.Crd_but.setGeometry(17, 246, 100, 100)
         self.Crd_but.setCheckable(True)
-        self.Crd_but.clicked.connect(self.button_tog)
+        self.Crd_but.clicked.connect(self.crd_tog)
         icon = QIcon("images/icons/Card.png")
         self.Crd_but.setIcon(icon)
         icon_size = QSize(90, 90)
@@ -37,7 +37,7 @@ class togButton(QMainWindow):
         self.finger_but.setIconSize(icon_size)
 
 
-    def button_tog(self):
+    def crd_tog(self):
         if self.Crd_but.isChecked():
 
             self.Crd_but.setStyleSheet("QPushButton {background-color:lightgreen}")
