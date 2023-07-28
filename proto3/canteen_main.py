@@ -5,7 +5,6 @@ from PyQt5.QtCore import Qt, QTimer, QDateTime
 from datetime import datetime
 from utilities.components import *
 
-
 class canteen_main(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -18,7 +17,7 @@ class canteen_main(QMainWindow):
         self.background_image.setPixmap(QPixmap("images/background.png"))
         self.background_image.setGeometry(0, 0, self.width, self.height)
 
-        canteen = imgbutton2(self, "images/icons/CanteenIcon.png", 100, 100, [18, 99], self.close)
+        canteen = imgbutton2(self, "images/icons/CanteenIcon.png", 100, 100, [18, 99], self.openCanteenSetting)
 
         self.backbtnv2 = imgbutton2(self, "images/icons/BackIcon.png", 30, 30, (5, 44), self.close)
 
@@ -44,6 +43,12 @@ class canteen_main(QMainWindow):
 
         # Initial date and time display
         self.update_date_time()
+
+    def openCanteenSetting(self):
+        from canteenSettings import canteen_setting
+        self.openCanteenSetting = canteen_setting()
+        self.openCanteenSetting.show()
+        self.close()
 
     def update_date_time(self):
         # Get current date and time
