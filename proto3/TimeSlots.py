@@ -18,7 +18,7 @@ class time_slots(QMainWindow):
         self.background_image.setPixmap(QPixmap("images/background.png"))
         self.background_image.setGeometry(0, 0, self.width, self.height)
 
-        newSlot = imgbutton2(self, "images/icons/TimeSlot100x100.png", 100, 100, [18, 99], self.openNewTimeSlot)
+        newSlot = imgbutton2(self, "images/icons/newTimeSlotIcon.png", 100, 100, [18, 99], self.openNewTimeSlot)
 
         editSlot = imgbutton2(self, "images/icons/EditSlot.png", 100, 100, [133, 99], self.openEditTimeSlot)
 
