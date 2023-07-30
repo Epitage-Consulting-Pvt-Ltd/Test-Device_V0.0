@@ -21,7 +21,7 @@ class commsExt(QMainWindow):
         self.extComm = imgbutton2(self, "images/icons/ExtComm50x50.png", 50, 50, [215, 34], self.close)
         self.extComm.setEnabled(False)
 
-        self.backbtnv2 = imgbutton2(self, "images/icons/BackIcon.png", 30, 30, (5, 44), self.close)
+        self.backbtnv2 = imgbutton2(self, "images/icons/BackIcon.png", 30, 30, (5, 44), self.openCommsMan)
 
         cancel_btn = imgbutton2(self, "images/icons/Cancel_btn.png", 85, 35, [147, 729], self.close)
 
@@ -107,6 +107,12 @@ class commsExt(QMainWindow):
 
         # Initial date and time display
         self.update_date_time()
+
+    def openCommsMan(self):
+        from CommsManagement import comm_man
+        self.openCommsMan = comm_man()
+        self.openCommsMan.show()
+        self.close()
 
     def update_date_time(self):
         # Get current date and time

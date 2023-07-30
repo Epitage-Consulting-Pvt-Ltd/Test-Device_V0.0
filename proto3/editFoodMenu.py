@@ -21,7 +21,7 @@ class editFoodSlot(QMainWindow):
         self.editFoodMenu = imgbutton2(self, "images/icons/editTimeSlot.png", 50, 50, [215, 34], self.close)
         self.editFoodMenu.setEnabled(False)
 
-        self.backbtnv2 = imgbutton2(self, "images/icons/BackIcon.png", 30, 30, (5, 44), self.close)
+        self.backbtnv2 = imgbutton2(self, "images/icons/BackIcon.png", 30, 30, (5, 44), self.openfoodMenu)
 
         cancel_btn = imgbutton2(self, "images/icons/Cancel_btn.png", 85, 35, [147, 729], self.close)
 
@@ -73,6 +73,12 @@ class editFoodSlot(QMainWindow):
 
         # Initial date and time display
         self.update_date_time()
+
+    def openfoodMenu(self):
+        from foodMenu import food_menu
+        self.openfoodMenu = food_menu()
+        self.openfoodMenu.show()
+        self.close()
 
     def update_date_time(self):
         # Get current date and time

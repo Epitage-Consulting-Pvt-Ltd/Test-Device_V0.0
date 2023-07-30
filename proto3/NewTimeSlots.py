@@ -20,7 +20,7 @@ class new_time_slots(QMainWindow):
 
         new_slot = imgbutton2(self, "images/icons/NewSlotBooking.png", 50, 50, [215, 34], self.close)
 
-        self.backbtnv2 = imgbutton2(self, "images/icons/BackIcon.png", 30, 30, (5, 44), self.close)
+        self.backbtnv2 = imgbutton2(self, "images/icons/BackIcon.png", 30, 30, (5, 44), self.openTimeSlot)
 
         cancel_btn = imgbutton2(self, "images/icons/Cancel_btn.png", 85, 35, [147, 729], self.close)
 
@@ -135,6 +135,12 @@ class new_time_slots(QMainWindow):
 
         # Initial date and time display
         self.update_date_time()
+
+    def openTimeSlot(self):
+        from TimeSlots import time_slots
+        self.openTimeSlot = time_slots()
+        self.openTimeSlot.show()
+        self.close()
 
     def update_date_time(self):
         # Get current date and time

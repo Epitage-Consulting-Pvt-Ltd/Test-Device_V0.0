@@ -18,11 +18,11 @@ class food_menu(QMainWindow):
         self.background_image.setPixmap(QPixmap("images/background.png"))
         self.background_image.setGeometry(0, 0, self.width, self.height)
 
-        newFoodMenu = imgbutton2(self, "images/icons/newFoodMenu100x100.png", 100, 100, [18, 99], self.close)
+        newFoodMenu = imgbutton2(self, "images/icons/newFoodMenu100x100.png", 100, 100, [18, 99], self.openNewFoodMenu)
 
-        editFoodMenu = imgbutton2(self, "images/icons/editFoodMenu100x100.png", 100, 100, [133, 99], self.close)
+        editFoodMenu = imgbutton2(self, "images/icons/editFoodMenu100x100.png", 100, 100, [133, 99], self.openEditFoodMenu)
 
-        self.backbtnv2 = imgbutton2(self, "images/icons/BackIcon.png", 30, 30, (5, 44), self.close)
+        self.backbtnv2 = imgbutton2(self, "images/icons/BackIcon.png", 30, 30, (5, 44), self.openCanteenSettings)
 
         self.foodMenu50x50 = imgbutton2(self, "images/icons/foodMenuIcon50x50.png", 50, 50, [215, 34], self.close)
         self.foodMenu50x50.setEnabled(False)
@@ -47,6 +47,24 @@ class food_menu(QMainWindow):
 
         # Initial date and time display
         self.update_date_time()
+
+    def openCanteenSettings(self):
+        from canteenSettings import canteen_setting
+        self.openCanteenSettings = canteen_setting()
+        self.openCanteenSettings.show()
+        self.close()
+
+    def openNewFoodMenu(self):
+        from newFoodMenu import newFoodMenu
+        self.openNewFoodMenu = newFoodMenu()
+        self.openNewFoodMenu.show()
+        self.close()
+
+    def openEditFoodMenu(self):
+        from editFoodMenu import editFoodSlot
+        self.openEditFoodMenu = editFoodSlot()
+        self.openEditFoodMenu.show()
+        self.close()
 
     def update_date_time(self):
         # Get current date and time

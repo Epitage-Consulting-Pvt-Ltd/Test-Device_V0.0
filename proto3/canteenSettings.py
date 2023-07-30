@@ -18,11 +18,11 @@ class canteen_setting(QMainWindow):
         self.background_image.setPixmap(QPixmap("images/background.png"))
         self.background_image.setGeometry(0, 0, self.width, self.height)
 
-        timeslot = imgbutton2(self, "images/icons/TimeSlot100x100.png", 100, 100, [18, 99], self.close)
+        timeslot = imgbutton2(self, "images/icons/TimeSlot100x100.png", 100, 100, [18, 99], self.openTimeSlots)
 
-        foodMenu = imgbutton2(self, "images/icons/FoodMenu.png", 100, 100, [133, 99], self.close)
+        foodMenu = imgbutton2(self, "images/icons/FoodMenu.png", 100, 100, [133, 99], self.openfoodMenu)
 
-        self.backbtnv2 = imgbutton2(self, "images/icons/BackIcon.png", 30, 30, (5, 44), self.close)
+        self.backbtnv2 = imgbutton2(self, "images/icons/BackIcon.png", 30, 30, (5, 44), self.openCanteenMain)
 
         self.canteenSetting = imgbutton2(self, "images/icons/CanteenSetting.png", 50, 50, [215, 34], self.close)
         self.canteenSetting.setEnabled(False)
@@ -47,6 +47,24 @@ class canteen_setting(QMainWindow):
 
         # Initial date and time display
         self.update_date_time()
+
+    def openCanteenMain(self):
+        from canteen_main import canteenMain
+        self.openCanteenMain = canteenMain()
+        self.openCanteenMain.show()
+        self.close()
+
+    def openTimeSlots(self):
+        from TimeSlots import time_slots
+        self.openTimeSlots = time_slots()
+        self.openTimeSlots.show()
+        self.close()
+
+    def openfoodMenu(self):
+        from foodMenu import food_menu
+        self.openfoodMenu = food_menu()
+        self.openfoodMenu.show()
+        self.close()
 
     def update_date_time(self):
         # Get current date and time

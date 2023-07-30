@@ -5,7 +5,7 @@ from PyQt5.QtCore import Qt, QTimer, QDateTime
 from datetime import datetime
 from utilities.components import *
 
-class canteen_main(QMainWindow):
+class canteenMain(QMainWindow):
     def __init__(self):
         super().__init__()
 
@@ -73,6 +73,6 @@ class canteen_main(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    window = canteen_main()
+    window = canteenMain()
     window.show()
     sys.exit(app.exec_())

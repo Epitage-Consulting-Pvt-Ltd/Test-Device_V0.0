@@ -18,11 +18,11 @@ class time_slots(QMainWindow):
         self.background_image.setPixmap(QPixmap("images/background.png"))
         self.background_image.setGeometry(0, 0, self.width, self.height)
 
-        newSlot = imgbutton2(self, "images/icons/TimeSlot100x100.png", 100, 100, [18, 99], self.close)
+        newSlot = imgbutton2(self, "images/icons/TimeSlot100x100.png", 100, 100, [18, 99], self.openNewTimeSlot)
 
-        editSlot = imgbutton2(self, "images/icons/EditSlot.png", 100, 100, [133, 99], self.close)
+        editSlot = imgbutton2(self, "images/icons/EditSlot.png", 100, 100, [133, 99], self.openEditTimeSlot)
 
-        self.backbtnv2 = imgbutton2(self, "images/icons/BackIcon.png", 30, 30, (5, 44), self.close)
+        self.backbtnv2 = imgbutton2(self, "images/icons/BackIcon.png", 30, 30, (5, 44), self.openCanteenSettings)
 
         self.slots = imgbutton2(self, "images/icons/TimeSlot50x50.png", 50, 50, [215, 34], self.close)
         self.slots.setEnabled(False)
@@ -47,6 +47,24 @@ class time_slots(QMainWindow):
 
         # Initial date and time display
         self.update_date_time()
+
+    def openCanteenSettings(self):
+        from canteenSettings import canteen_setting
+        self.openCanteenSettings = canteen_setting()
+        self.openCanteenSettings.show()
+        self.close()
+
+    def openNewTimeSlot(self):
+        from NewTimeSlots import new_time_slots
+        self.openNewTimeSlot = new_time_slots()
+        self.openNewTimeSlot.show()
+        self.close()
+
+    def openEditTimeSlot(self):
+        from EditTimeSlot import edit_time_slots
+        self.openEditTimeSlot = edit_time_slots()
+        self.openEditTimeSlot.show()
+        self.close()
 
     def update_date_time(self):
         # Get current date and time

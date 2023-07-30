@@ -18,9 +18,9 @@ class comm_man(QMainWindow):
         self.background_image.setPixmap(QPixmap("images/background.png"))
         self.background_image.setGeometry(0, 0, self.width, self.height)
 
-        commsInt = imgbutton2(self, "images/icons/CommsInt100x100.png", 100, 100, [18, 141], self.close)
+        commsInt = imgbutton2(self, "images/icons/CommsInt100x100.png", 100, 100, [18, 141], self.openIntComm)
 
-        commsExt = imgbutton2(self, "images/icons/CommsExt100x100.png", 100, 100, [134, 141], self.close)
+        commsExt = imgbutton2(self, "images/icons/CommsExt100x100.png", 100, 100, [134, 141], self.openExtComm)
 
         self.backbtnv2 = imgbutton2(self, "images/icons/BackIcon.png", 30, 30, (5, 44), self.close)
 
@@ -58,6 +58,18 @@ class comm_man(QMainWindow):
 
         # Initial date and time display
         self.update_date_time()
+
+    def openIntComm(self):
+        from commsInternals import commsInt
+        self.openIntComm = commsInt()
+        self.openIntComm.show()
+        self.close()
+
+    def openExtComm(self):
+        from commsExternal import commsExt
+        self.openExtComm = commsExt()
+        self.openExtComm.show()
+        self.close()
 
     def update_date_time(self):
         # Get current date and time

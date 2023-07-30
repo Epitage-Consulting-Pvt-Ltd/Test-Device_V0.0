@@ -24,6 +24,8 @@ class edit_time_slots(QMainWindow):
 
         ok_btn = imgbutton2(self, "images/icons/OK_btn.png", 85, 35, [248, 729], self.close)
 
+        self.backbtnv2 = imgbutton2(self, "images/icons/BackIcon.png", 30, 30, (5, 44), self.openTimeSlot)
+
         #labels & textfields
 
         label = QLabel("Slot ID", self)
@@ -133,6 +135,12 @@ class edit_time_slots(QMainWindow):
 
         # Initial date and time display
         self.update_date_time()
+
+    def openTimeSlot(self):
+        from TimeSlots import time_slots
+        self.openTimeSlot = time_slots()
+        self.openTimeSlot.show()
+        self.close()
 
     def update_date_time(self):
         # Get current date and time
