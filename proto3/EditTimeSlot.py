@@ -19,10 +19,13 @@ class edit_time_slots(QMainWindow):
         self.background_image.setGeometry(0, 0, self.width, self.height)
 
         edit_slot = imgbutton2(self, "images/icons/editTimeSlot.png", 50, 50, [215, 34], self.close)
+        edit_slot.setEnabled(False)
 
-        cancel_btn = imgbutton2(self, "images/icons/Cancel_btn.png", 85, 35, [147, 729], self.close)
+        cancel_btn = imgbutton2(self, "images/icons/Cancel_btn.png", 100, 100, [147, 729], self.close)
+        cancel_btn.resize(85, 35)
 
-        ok_btn = imgbutton2(self, "images/icons/OK_btn.png", 85, 35, [248, 729], self.close)
+        ok_btn = imgbutton2(self, "images/icons/OK_btn.png", 100, 100, [248, 729], self.close)
+        ok_btn.resize(85, 35)
 
         self.backbtnv2 = imgbutton2(self, "images/icons/BackIcon.png", 30, 30, (5, 44), self.openTimeSlot)
 

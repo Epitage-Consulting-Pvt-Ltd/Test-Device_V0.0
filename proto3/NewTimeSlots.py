@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QLabel, QMainWindow ,QPushButton , QLineEdit
+from PyQt5.QtWidgets import QApplication, QLabel, QMainWindow ,QPushButton , QLineEdit, QCheckBox
 from PyQt5.QtGui import QPixmap, QFont
 from PyQt5.QtCore import Qt, QTimer, QDateTime
 from datetime import datetime
@@ -22,9 +22,11 @@ class new_time_slots(QMainWindow):
 
         self.backbtnv2 = imgbutton2(self, "images/icons/BackIcon.png", 30, 30, (5, 44), self.openTimeSlot)
 
-        cancel_btn = imgbutton2(self, "images/icons/Cancel_btn.png", 85, 35, [147, 729], self.close)
+        cancel_btn = imgbutton2(self, "images/icons/Cancel_btn.png", 100, 100, [147, 729], self.close)
+        cancel_btn.resize(85, 35)
 
-        ok_btn = imgbutton2(self, "images/icons/OK_btn.png", 85, 35, [248, 729], self.close)
+        ok_btn = imgbutton2(self, "images/icons/OK_btn.png", 100, 100, [248, 729], self.close)
+        ok_btn.resize(85, 35)
 
         #labels & textfields
 
@@ -77,6 +79,10 @@ class new_time_slots(QMainWindow):
         self.menuName_field = QLineEdit(self)
         self.menuName_field.setFixedSize(155, 30)
         self.menuName_field.move(268, 219)
+
+        self.checkbox1 = QCheckBox('Option 1')
+        self.checkbox1.move(436, 222)
+
 
     #second row
 
@@ -136,11 +142,22 @@ class new_time_slots(QMainWindow):
         # Initial date and time display
         self.update_date_time()
 
+        layout = QVBoxLayout()
+        layout.addWidget(self.checkbox1)
+        self.setLayout(layout)
+
     def openTimeSlot(self):
         from TimeSlots import time_slots
         self.openTimeSlot = time_slots()
         self.openTimeSlot.show()
         self.close()
+
+    def checkboxStateChanged(self, state):
+        sender = self.sender()
+        if state == 2:  # Checked state
+            print(sender.text() + ' is checked')
+        else:
+            print(sender.text() + ' is unchecked')
 
     def update_date_time(self):
         # Get current date and time

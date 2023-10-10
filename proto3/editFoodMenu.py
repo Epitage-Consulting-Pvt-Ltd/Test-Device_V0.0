@@ -23,9 +23,11 @@ class editFoodSlot(QMainWindow):
 
         self.backbtnv2 = imgbutton2(self, "images/icons/BackIcon.png", 30, 30, (5, 44), self.openfoodMenu)
 
-        cancel_btn = imgbutton2(self, "images/icons/Cancel_btn.png", 85, 35, [147, 729], self.close)
+        cancel_btn = imgbutton2(self, "images/icons/Cancel_btn.png", 100, 100, [147, 729], self.close)
+        cancel_btn.resize(85, 35)
 
-        ok_btn = imgbutton2(self, "images/icons/OK_btn.png", 85, 35, [248, 729], self.close)
+        ok_btn = imgbutton2(self, "images/icons/OK_btn.png", 100, 100, [248, 729], self.close)
+        ok_btn.resize(85, 35)
 
         #labels & textfields
 
